@@ -3,7 +3,7 @@
 
 <head>
 <script src="game.js"></script>
-<script> var bear; </script>
+<script> var bear; var bees = []; let updateTimer; var lastStringTime=0;</script>
    
 <noscript>
  Warning - JavaScript is Disabled.
@@ -18,10 +18,10 @@
 
         <div id="title">
             <h1>Help the bear escape the bees !</h1>
-            <p>Bear tries to avoid being stung by <input type="text" id="nbBees" value="1" size="3"> bees by running and jumping. The objective is to have as less stings as possible!</p>
+            <p>Bear tries to avoid being stung by <input type="text" id="nbBees" value="1" size="3" onchange="makeBees()"> bees by running and jumping. The objective is to have as less stings as possible!</p>
             <p>Adjust the bear's speed : <input type="text" id="dbear" size="3" value="50" onchange="setSpeed()"></p>
-            <p>You can adjust bees' speed <input type="text" id="speedBees" value="50" size="3"> px/ms
-                <br> and the refresh period <input type="text" id="periodTimer" value="10" size="3"> ms </p>
+            <p>You can adjust bees' speed <input type="text" id="speedBees" value="50" size="3" onchange="moveBees();"> px/ms
+                <br> and the refresh period <input type="text" id="periodTimer" value="10000" size="3" onchange="updateBees()"> ms </p>
             <h2>Press left, right, up, down keys to move the bear</h2>
 
         </div>
