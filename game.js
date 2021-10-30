@@ -44,12 +44,12 @@ function setSpeed() {
 function start() {
     //create bear
     bear = new Bear();
+    lastStingTime = new Date()
     // Add an event listener to the keypress event.
     document.addEventListener("keydown", moveBear, false);
     setSpeed();
     makeBees();
     updateBees();
-    lastStingTime = new Date();
 }
 
 // Handle keyboad events 
@@ -196,6 +196,11 @@ function updateBees() { // update loop for game
     }
 
 }
+function addBee(){
+    var bee = new Bee(1);
+    bee.display();
+    bees.push(bee);
+}
 
 function isHit(defender, offender) {
     if (overlap(defender, offender)) { //check if the two image overlap
@@ -205,14 +210,15 @@ function isHit(defender, offender) {
         let newStingTime = new Date();
         let thisDuration = newStingTime - lastStingTime;
         lastStingTime = newStingTime;
-        let longestDuration = Number(duration.innerHTML);
-        console.log(longestDuration);
+        let longestDuration = Number(duration.innerHTML)
         if (longestDuration === 0) {
             longestDuration = thisDuration;
-        } else {
-            if (longestDuration < thisDuration) longestDuration = thisDuration;
+        } 
+        else {
+            if (longestDuration < thisDuration){
+                longestDuration = thisDuration;
+            }
         }
-        
         document.getElementById("duration").innerHTML = longestDuration;
        
     }

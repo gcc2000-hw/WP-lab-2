@@ -3,7 +3,7 @@
 
 <head>
 <script src="game.js"></script>
-<script> var bear; var bees = []; let updateTimer; var lastStringTime=0;</script>
+<script> var bear; var bees = []; var updateTimer; var lastStingTime;</script>
    
 <noscript>
  Warning - JavaScript is Disabled.
@@ -19,9 +19,10 @@
         <div id="title">
             <h1>Help the bear escape the bees !</h1>
             <p>Bear tries to avoid being stung by <input type="text" id="nbBees" value="1" size="3" onchange="makeBees()"> bees by running and jumping. The objective is to have as less stings as possible!</p>
+            <p1 style="font-family: Verdana;">Press here : <button type="button" id="aBee" onclick="addBee()">Add a bee!</button> to add one bee to the board</p1>
             <p>Adjust the bear's speed : <input type="text" id="dbear" size="3" value="50" onchange="setSpeed()"></p>
             <p>You can adjust bees' speed <input type="text" id="speedBees" value="50" size="3" onchange="moveBees();"> px/ms
-                <br> and the refresh period <input type="text" id="periodTimer" value="10000" size="3" onchange="updateBees()"> ms </p>
+                <br> and the refresh period <input type="text" id="periodTimer" value="100" size="3" onchange="updateBees()"> ms </p>
             <h2>Press left, right, up, down keys to move the bear</h2>
 
         </div>
@@ -29,10 +30,10 @@
             <table>
                 <tr>
                     <td>
-                        <p>Stings: [<span id="hits">0</span>]</p>
+                        <ps1>Stings: [<span id="hits">0</span>]</ps1>
                     </td>
                     <td>
-                        <p>Best duration: [<span id="duration">?</span>]</p>
+                        <ps2>Best duration: [<span id="duration">0</span>]</ps2>
                     </td>
                 </tr>
             </table>
