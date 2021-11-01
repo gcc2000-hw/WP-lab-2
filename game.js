@@ -44,7 +44,7 @@ function setSpeed() {
 function start() {
     //create bear
     bear = new Bear();
-    lastStingTime = new Date()
+    lastStingTime = new Date();
     // Add an event listener to the keypress event.
     document.addEventListener("keydown", moveBear, false);
     setSpeed();
